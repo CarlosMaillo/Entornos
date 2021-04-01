@@ -1,5 +1,8 @@
 import java.util.Scanner;
-
+/**
+ * @author Maíllo
+ * @version 1.1
+ */
 public class Calculadora 
 {
 	float resultado,operando1,operando2;
@@ -7,6 +10,9 @@ public class Calculadora
 	public Calculadora() 
 	{
 	}
+	/**
+	 * @since disponible desde la versión 1.1
+	 */
 	public void pedirOperandos()
 	{
 		Scanner teclado=new Scanner(System.in);
@@ -16,25 +22,33 @@ public class Calculadora
 		operando2=teclado.nextFloat();
 		
 	}
-	
+	/**
+	 * @return devuelve un float
+	 */
 	public float suma()
 	{
 		resultado = operando1 + operando2;
 		return resultado;
 	}
-
+	/**
+	 * @return devuelve un float
+	 */
 	public float resta()
 	{
 		resultado = operando1 - operando2;
 		return resultado;
 	}
-	
+	/**
+	 * @return devuelve un float
+	 */
 	public float multiplicacion()
 	{
 		resultado = operando1 * operando2;
 		return resultado;
 	}
-	
+	/**
+	 * @return devuelve un float
+	 */
 	public float division()
 	{
 		if(operando2!=0)
@@ -48,7 +62,9 @@ public class Calculadora
 			return -1;
 		}
 	}
-	
+	/**
+	 * @return devuelve un float
+	 */
 	public float raiz_cuadrada()
 	{
 		Scanner teclado=new Scanner(System.in);
@@ -67,7 +83,9 @@ public class Calculadora
 			return -1;
 		}
 	}
-
+	/**
+	 * @anotación Main de la clase calculadora, cración del objeto y llamada a los métodos de la clase
+	 */
 	public static void main(String[] args) {
 		
 		Calculadora c1 = new Calculadora();
