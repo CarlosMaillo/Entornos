@@ -1,36 +1,41 @@
+import java.util.Scanner;
 
 public class Calculadora 
 {
-	float resultado;
+	float resultado,operando1,operando2;
 	
 	public Calculadora() 
 	{
-		// TODO Auto-generated constructor stub
 	}
 	public void pedirOperandos()
 	{
+		Scanner teclado=new Scanner(System.in);
 		System.out.println("Por favor introduzca el primer operando");
+		operando1=teclado.nextFloat();
+		System.out.println("Por favor introduzca el segundo operando");
+		operando2=teclado.nextFloat();
+		
 	}
 	
-	public float suma(float operando1, float operando2)
+	public float suma()
 	{
 		resultado = operando1 + operando2;
 		return resultado;
 	}
 
-	public float resta(float operando1, float operando2)
+	public float resta()
 	{
 		resultado = operando1 - operando2;
 		return resultado;
 	}
 	
-	public float multiplicacion(float operando1, float operando2)
+	public float multiplicacion()
 	{
 		resultado = operando1 * operando2;
 		return resultado;
 	}
 	
-	public float division(float operando1, float operando2)
+	public float division()
 	{
 		if(operando2!=0)
 		{
@@ -44,24 +49,35 @@ public class Calculadora
 		}
 	}
 	
-	public float raiz_cuadrada(float operando1)
+	public float raiz_cuadrada()
 	{
-		if(operando1>=1)
-		{
-			return (float) Math.sqrt(operando1);
+		Scanner teclado=new Scanner(System.in);
+		System.out.println("¿De qué operando de los 2 desea hacer la raíz cuadrada(1 o 2)?");
+		if(teclado.nextInt()==1) {
+			if(operando1>=1)
+			{
+				return (float) Math.sqrt(operando1);
+			}
+			return -1;
+		}else{
+			if(operando2>=1)
+			{
+				return (float) Math.sqrt(operando2);
+			}
+			return -1;
 		}
-		return -1;
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		Calculadora c1 = new Calculadora();
-		System.out.println("Método suma: "+c1.suma(1, 2));
-		System.out.println("Método resta: "+c1.resta(1, 2));
-		System.out.println("Método multiplicacion: "+c1.multiplicacion(1, 2));
-		System.out.println("Método division: "+c1.division(1, 0));
-		System.out.println("Método raíz cuadrada: "+c1.raiz_cuadrada(-4));
+		c1.pedirOperandos();
+		System.out.println("Método suma: "+c1.suma());
+		System.out.println("Método resta: "+c1.resta());
+		System.out.println("Método multiplicacion: "+c1.multiplicacion());
+		System.out.println("Método division: "+c1.division());
+		System.out.println("Método raíz cuadrada: "+c1.raiz_cuadrada());
 	}
 
 }
+
